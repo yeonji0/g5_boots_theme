@@ -17,11 +17,13 @@ if(G5_COMMUNITY_USE === false) {
 <hr>
 
 <!-- 하단 시작 { -->
-<div class="bg-dark">
-    <div class="container">
-        d
+
+
+    <div class="bg-dark">
+        <div class="container py-5 text-center text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, iste.
+        </div>
     </div>
-</div>
     
 <?php
 if(G5_DEVICE_BUTTON_DISPLAY && !G5_IS_MOBILE) { ?>

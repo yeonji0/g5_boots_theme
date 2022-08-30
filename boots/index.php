@@ -14,12 +14,7 @@ if(G5_COMMUNITY_USE === false) {
 
 include_once(G5_THEME_PATH.'/head.php');
 ?>
-<style>
-    .cont{height: 100px;background:skyblue;}
-</style>
-<div class="container cont">
 
-</div>
 
 <?php
 include_once(G5_THEME_PATH.'/tail.php');
