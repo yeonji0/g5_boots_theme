@@ -11,12 +11,17 @@ if(G5_COMMUNITY_USE === false) {
     return;
 }
 ?>
-
+</div>
 <!-- } 콘텐츠 끝 -->
 
 <hr>
 
 <!-- 하단 시작 { -->
+<div class="bg-dark">
+    <div class="container">
+        d
+    </div>
+</div>
     
 <?php
 if(G5_DEVICE_BUTTON_DISPLAY && !G5_IS_MOBILE) { ?>
