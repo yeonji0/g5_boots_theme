@@ -21,114 +21,93 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 ?>
 
 <!-- 상단 시작 { -->
-<div id="hd">
-    <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
-    <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand col-sm-3" href="<?echo G5_URL?>">
+                <img src="<? echo G5_THEME_IMG_URL ?>/logo.svg" alt="" style="width:180px">
+            </a>
 
-    <?php
-    if(defined('_INDEX_')) { // index에서만 실행
-        include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어
-    }
-    ?>
-    <div id="hd_wrapper">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation"></button>
 
-        <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_THEME_IMG_URL ?>/logo.svg" alt="<?php echo $config['cf_title']; ?>"></a>
-        </div>
-    
-        <nav id="gnb">
-        <h2>메인메뉴</h2>
-        <div class="gnb_wrap">
-            <ul id="gnb_1dul">
-                
-               
-               <?php
-				$menu_datas = get_menu_db(0, true);
-				$gnb_zindex = 999; // gnb_1dli z-index 값 설정용
-                $i = 0;
-                foreach( $menu_datas as $row ){
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0 me-5 gap-3">
+                    <?php
+                    $menu_datas = get_menu_db(0, true);
+                    $gnb_zindex = 999; // gnb_1dli z-index 값 설정용
+                    $i = 0;
+                    foreach( $menu_datas as $row ){
                     if( empty($row) ) continue;
-                    $add_class = (isset($row['sub']) && $row['sub']) ? 'gnb_al_li_plus' : '';
+                
                 ?>
-                <li class="gnb_1dli <?php echo $add_class; ?>" style="z-index:<?php echo $gnb_zindex--; ?>">
-                    <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da"><?php echo $row['me_name'] ?></a>
-                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="<?php echo $row['me_link']; ?>" id="navbarDropdownMenuLink" 
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false" target="_<?php echo $row['me_target']; ?>">
+                        <?php echo $row['me_name'] ?>>
+                    </a>
+
+                    <!-- 서브 -->
+                    <?php
+                            $k = 0;
+                            foreach( (array) $row['sub'] as $row2 ){
+
+                                if( empty($row2) ) continue; 
+
+                                if($k == 0)
+                                    echo '<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">'
+                                    .PHP_EOL;
+                            ?>
+                            
+                        <li>
+                            <a href="<?php echo $row2['me_link']; ?>" 
+                               target="_<?php echo $row2['me_target']; ?>" 
+                               class="dropdown-item"><?php echo $row2['me_name'] ?>
+                            </a>
+                        </li>
+
+                        <?php
+                        $k++;
+                        }   //end foreach $row2
+
+                        if($k > 0)
+                            echo '</ul>'.PHP_EOL;
+                        ?>
+                    <!-- 서브 -->
+                 </li>
                 <?php
                 $i++;
                 }   //end foreach $row
+               ?>
+                </ul>
+            </div>
 
-                if ($i == 0) {  ?>
-                    <li class="gnb_empty">메뉴 준비 중입니다.<?php if ($is_admin) { ?> <a href="<?php echo G5_ADMIN_URL; ?>/menu_list.php">관리자모드 &gt; 환경설정 &gt; 메뉴설정</a>에서 설정하실 수 있습니다.<?php } ?></li>
-                <?php } ?>
-            </ul>
+
+
+
+            <div class="logIn d-flex gap-2 justify-content-center ">
+                <img src="<? echo G5_THEME_IMG_URL ?>/menu_nonMember.png" alt="" style="width:60px">
+                <a href="#" class="d-flex justify-content-center align-items-center">로그인하기</a>
+            </div>
             
         </div>
     </nav>
-        
-    </div>
-    
-   
- 
-</div>
+
+
 <!-- } 상단 끝 -->
 
 
 <hr>
 
-<style>
-    .visual{
-        background: pink;height: 200px;
-        display: flex;justify-content: center; align-items:center;
-        background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-        color:white;
-    }
-    .visual h2{font-size:2em;}
-    .subTopBg_01{
-        background: skyblue;
-        background-image: url(<? echo G5_THEME_IMG_URL?>/pc01.jpg);
-    }
-    .subTopBg_02{background: orange;
-        background-image: url(<? echo G5_THEME_IMG_URL?>/pc02.jpg);
-    }
-    .subTopBg_03{background: green;
-        background-image: url(<? echo G5_THEME_IMG_URL?>/pc03.jpg);
-    }
-    .subTopBg_04{background: gray;
-        background-image: url(<? echo G5_THEME_IMG_URL?>/pc03.jpg);
-    }
-</style>
 <!-- 콘텐츠 시작 { -->
-<div id="wrapper">
+
+    <?  if(defined('_INDEX_')) { ?>
+        <div class="containerw_wr" >
+    <? }else{?>
+        <div class="container" >
+    <?} ?>
+
+
+
     
-<?php if (!defined("_INDEX_")) { ?>
-    <div class="visual" id="page_title">
-        <div class="txtWrap">
-            <h2 class="loc1D"></h2>
-            <p>저희 홈페이지를 찾아주셔서 감사합니다.</p>
-        </div>
-    </div>
-    <script>
-        window.onload = function(){
-        console.log("111"+$(".loc1D").html())
-        if($(".loc1D").thml() == "회사소개"){
-                $(".txtWrap>.txt").thml("안녕하세요")
-            }
-        }
-    </script>
-    <? }?>
-
-    <div id="container_wr" <?php if (defined("_INDEX_")) { ?> style="width:100%" <?php }?> >
- 
-    <div id="container">
-        <? ?>
-        <?php if (!defined("_INDEX_")) { ?>
-            <h2 id="container_title">
-                <span title="<?php echo get_text($g5['title']); ?>">
-                    <?php echo get_head_title($g5['title']); ?>
-                </span>
-            </h2>
-        <?php } ?>
-

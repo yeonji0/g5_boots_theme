@@ -23,7 +23,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <!-- 상단 시작 { -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand col-sm-3" href="#">
+            <a class="navbar-brand col-sm-3" href="<?echo G5_URL?>">
                 <img src="<? echo G5_THEME_IMG_URL ?>/logo.svg" alt="" style="width:180px">
             </a>
 
@@ -42,15 +42,50 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 
                 ?>
 
-                    <li class="nav-item">
-                        <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" ><?php echo $row['me_name'] ?></a>
-                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="<?php echo $row['me_link']; ?>" id="navbarDropdownMenuLink" 
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false" target="_<?php echo $row['me_target']; ?>">
+                        <?php echo $row['me_name'] ?>>
+                    </a>
+
+                    <!-- 서브 -->
+
+                            <?php
+                            $k = 0;
+                            foreach( (array) $row['sub'] as $row2 ){
+
+                                if( empty($row2) ) continue; 
+
+                                if($k == 0)
+                                    echo '<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">'
+                                    .PHP_EOL;
+                            ?>
+                            
+                        <li>
+                            <a href="<?php echo $row2['me_link']; ?>" 
+                               target="_<?php echo $row2['me_target']; ?>" 
+                               class="dropdown-item"><?php echo $row2['me_name'] ?>
+                            </a>
+                        </li>
+
+                        <?php
+                        $k++;
+                        }   //end foreach $row2
+
+                        if($k > 0)
+                            echo '</ul>'.PHP_EOL;
+                        ?>
+                 <!-- 서브 -->
+                 </li>
                 <?php
                 $i++;
                 }   //end foreach $row
                ?>
                 </ul>
             </div>
+
+
+
 
             <div class="logIn d-flex gap-2 justify-content-center ">
                 <img src="<? echo G5_THEME_IMG_URL ?>/menu_nonMember.png" alt="" style="width:60px">
@@ -67,32 +102,13 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <hr>
 
 <!-- 콘텐츠 시작 { -->
-    <div class="container_wr">
-        <div>
-            <div class="video mb-5">
-              <video src="https://ybmlemon.com/img/web/HOME/main/ybmlemon.mp4" 
-              autoplay muted loop muted playsinline poster></video>
-            </div>
-        </div>
 
-        <div class="container banner p-5">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col d-flex gap-3">
-                    <div class="card">
-                        <div class="card-img p-3">
-                            <img class="position-relative" src="<? echo G5_THEME_IMG_URL ?>/main_visual_01.png" alt="">
-                            <img class="img01 position-absolute" src="<? echo G5_THEME_IMG_URL ?>/main_visual_01_item01.png" alt="">
-                            <img class="img02 position-absolute" src="<? echo G5_THEME_IMG_URL ?>/main_visual_01_item02.png" alt="">
-                        </div>
-                    </div> 
-                    <div class="txtWrap">
-                        <h2>YBM 레몬만의 <br> 전용뷰어로 수업</h2>
-                        <p>화상 회의실 같은 딱딱한 뷰어가 아닙니다. <br> YBM교육이 개발한 화상수업 전용 뷰어입니다.</p>
-                    </div>
-                </div>
-            </div>
+    <?  if(defined('_INDEX_')) { ?>
+        <div class="containerw_wr bg-info" >
+    <? }else{?>
+        <div class="container bg-info" >
+    <?} ?>
 
-        </div>
 
 
     
