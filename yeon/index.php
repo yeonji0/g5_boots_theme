@@ -36,7 +36,7 @@ include_once(G5_THEME_PATH.'/head.php');
                 </div>      
             </div>
 
-            <div class="row" >
+            <div class="row"  >
                 
                 <div class="container-fluid d-flex justify-content-center align-items-center gap-5">
                 <div class="txtWrap p-5 text-center">
