@@ -40,7 +40,7 @@ include_once(G5_THEME_PATH.'/head.php');
     </div>
 
     <div class="container sec01 rounded-5 mb-5 p-3">       
-            <div class="row d-flex justify-content-center ">   
+            <div class="row">   
 
                 <div class="col-md-4 col-lg-8 d-flex align-items-center">
                         <div class="txttWrap p-3">
@@ -49,8 +49,8 @@ include_once(G5_THEME_PATH.'/head.php');
                         </div>
                 </div>      
                 
-                <div class="col-md-8 col-lg-4 position-relative d-flex justify-content-center">
-                    <img class="img05 img-fluid position-absolute" src="<? echo G5_THEME_IMG_URL ?>/main_visual_02.png" alt="">
+                <div class="col-md-8 col-lg-4 d-flex justify-content-center">
+                    <img class="img05" src="<? echo G5_THEME_IMG_URL ?>/main_visual_02.png" alt="">
                 </div>
 
             </div>
