@@ -43,6 +43,8 @@ border:1px solid #558ab7 !important;
 }
 
 .placeholdersjs {color:#aaa !important}
+h2{font-size: 3.5em; font-weight: bold;}
+h3{font-size: 3em; font-weight: bold;}
 
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;height:0}
@@ -70,16 +72,29 @@ border:1px solid #558ab7 !important;
   position: relative; overflow:hidden;
 }
 .mView video{
-  position: absolute; width: 100%;left: 50%;top: 50%; transform:translate(-50%,-50%)
+  position: absolute; 
+  width: 100%;left: 50%;top: 50%; transform:translate(-50%,-50%)
 }
 .banner{margin: 0 auto;}
-.img01{top: -100px; right:-50px;}
-.img02{bottom: -30px;right:-50px;}
-.card{border: 0 none;}
-.card-img{height: 300px;}
 
-.txtWrap h2{font-size: 3em; font-weight: bold;line-height: 50px;}
+.banner .img01{top: -50px; right:50px; transform: scale(1);}
+.banner .img02{right: 0; bottom: -15px;}
+.banner .img03{transform: scale(0.5);left: -85px;bottom: -50px;}
+.banner .img04{left: -28px;bottom: -60px;}
+
 .txtWrap p{font-size: 1.5em;}
+.sec01{
+  margin: 0 auto;
+  height: 500px;
+  background-image: url(../img/main_visual_bg01.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sec01 .img05{
+  transform: scale(0.5);
+  left: -50%; 
+}
 
 /* 하단 레이아웃 */
 
@@ -340,3 +355,42 @@ box-sizing:content-box;
 /* Mobile화면으로 */
 #device_change {display:block;margin:0.3em;padding:0.5em 0;border:1px solid #eee;border-radius:2em;background:#fff;color:#000;font-size:2em;text-decoration:none;text-align:center}
 
+
+/********** css responsive **********/
+@media (max-width: 1399px) {
+  h2{font-size: 3em;}
+}
+
+@media (max-width: 1199px) {
+  h2{font-size: 2.5em;}
+}
+
+@media (max-width: 991px) {
+h2{font-size: 2em;}
+.banner .img01{bottom: -50px; right:50px; transform: scale(0.8);}
+.banner .img02{right: -80px; bottom: -100px;transform: scale(0.5)}
+.banner .img03{transform: scale(0.3);left: -85px;bottom: -135px;}
+.banner .img04{left: -28px;bottom: -100px;} 
+  
+}
+
+@media (max-width: 767px) {
+.banner .img01{bottom: -50px; right:50px; transform: scale(1);}
+.banner .img02{right: -80px; bottom: -100px;transform: scale(1);}
+.banner .img03{transform: scale(0.5);left: -85px;bottom: -135px;}
+.banner .img04{left: -28px;bottom: -150px;} 
+
+.txtWrap {display: flex;justify-content: center;align-items: center;}
+
+}
+
+@media (max-width: 575px) {
+  .sec01 .img05{transform: scale(0.3);}
+  .sec01 .txttWrap{
+    display: flex;
+    flex: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
