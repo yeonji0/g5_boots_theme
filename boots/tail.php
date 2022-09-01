@@ -11,6 +11,9 @@ if(G5_COMMUNITY_USE === false) {
     return;
 }
 ?>
+
+<? include_once(G5_THEME_PATH.'/skin/nav/mysubmenu.php') ?>
+
 </div>
 <!-- } 콘텐츠 끝 -->
 

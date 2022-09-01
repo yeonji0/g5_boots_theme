@@ -44,6 +44,8 @@ border:1px solid #558ab7 !important;
 
 .placeholdersjs {color:#aaa !important}
 
+h2.stitle{font-size: 32px;}
+
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;height:0}
 #hd_pop h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
@@ -64,23 +66,20 @@ border:1px solid #558ab7 !important;
 .logIn a{font-size: 1.3em;}
 
 /* 중간 레이아웃 */
-.container_wr{width: 1200px;}
-.video{
-  height: 700.198px; width: 1920px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.subView{
+  height: 300px; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;justify-content: center;align-items: center;
 }
-.video video{
-  width: 100%;
-  object-fit: fill;  
-}
-.banner{margin: 0 auto;}
-.img01{top: -100px; right:-80px;}
-.img02{bottom: -30px;right: -90px;}
-.card{border: 0 none;}
-
+.subView.subTopBg_01{background-image: url(../img/images01.jpg);}
+.subView.subTopBg_02{background-image: url(../img/images02.jpg);}
+.subView.subTopBg_03{background-image: url(../img/images03.jpg);}
+.subView.subTopBg_04{background-image: url(../img/images04.jpg);}
+.subView.subTopBg_05{background-image: url(../img/images05.jpg);}
+.stitle{}
+.locTitle{margin-top: -20px;}
 /* 하단 레이아웃 */
 
 /* 게시물 선택복사 선택이동 */
