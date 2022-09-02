@@ -49,7 +49,7 @@ include_once(G5_THEME_PATH.'/head.php');
                         </div>
                 </div>      
                 
-                <div class="col-md-8 col-lg-4 d-flex justify-content-center">
+                <div class="col-md-8 col-lg-4 p-3">
                     <img class="img05" src="<? echo G5_THEME_IMG_URL ?>/main_visual_02.png" alt="">
                 </div>
 
@@ -58,17 +58,21 @@ include_once(G5_THEME_PATH.'/head.php');
     </div>
         
         
-        <!-- <div class="container-fluid d-flex justify-content-center align-items-center gap-5 mb-5">
-                <div class="imgWrap p-3 position-relative">
-                    <img class="img01 position-absolute" src="<? echo G5_THEME_IMG_URL ?>/main_visual_03.png" alt="">
-                    <img class="img01 position-absolute" src="<? echo G5_THEME_IMG_URL ?>/img_6.png" alt="">
-                </div>
+    <div class="container sec02 p-3 mb-5">
+        <div class="row">       
+            <div class="col-md-6 d-flex position-relative ">
+                <img class="img06 " src="<? echo G5_THEME_IMG_URL ?>/main_visual_03.png" alt="">
+                <img class="img07 position-absolute" src="<? echo G5_THEME_IMG_URL ?>/img_6.png" alt="">
+            </div>
 
-                <div class="txtWrap p-5">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="txtWrap">
                     <h2 class="mb-3">지루할 틈이 없는 수업 진행</h2>
                     <p>온라인 교구와 액티비티로 흥미있는 수업이 진행됩니다.<br>선생님과 함께 직접 수업에 참여합니다.</p>
-                </div>      
-        </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <?php

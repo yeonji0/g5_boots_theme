@@ -45,6 +45,7 @@ border:1px solid #558ab7 !important;
 .placeholdersjs {color:#aaa !important}
 h2{font-size: 3.5em; font-weight: bold;}
 h3{font-size: 3em; font-weight: bold;}
+p{font-size: 1.5em;}
 
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;height:0}
@@ -82,7 +83,7 @@ h3{font-size: 3em; font-weight: bold;}
 .banner .img03{transform: scale(0.5);left: -85px;bottom: -50px;}
 .banner .img04{left: -28px;bottom: -60px;}
 
-.txtWrap p{font-size: 1.5em;}
+
 .sec01{
   margin: 0 auto;
   background-image: url(../img/main_visual_bg01.png);
@@ -92,8 +93,11 @@ h3{font-size: 3em; font-weight: bold;}
 }
 .sec01 .img05{
   transform: scale(0.5);
-  left: -50%; 
 }
+.sec02 .img07{
+  left:50%; bottom: 0;
+}
+
 
 /* 하단 레이아웃 */
 
@@ -380,6 +384,7 @@ h2{font-size: 2em;}
 .banner .img04{left: -28px;bottom: -150px;} 
 
 .txtWrap {display: flex;justify-content: center;align-items: center;}
+
 
 }
 
