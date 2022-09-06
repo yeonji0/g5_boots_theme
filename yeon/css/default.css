@@ -91,13 +91,22 @@ p{font-size: 1.5em;}
   background-repeat: no-repeat;
   background-size: cover;
 }
-.sec01 .img05{
-  transform: scale(0.5);
-}
 .sec02 .img07{
   left:50%; bottom: 0;
+  animation: imgAni1 5s alternate infinite linear;
+}
+@keyframes imgAni1{ 
+  100%{transform: translateY(0) rotate(180deg);}
 }
 
+.sec03{
+  background-color: #CEF5F5;
+}
+.sec03 .bgWrap{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /* 하단 레이아웃 */
 
@@ -384,7 +393,8 @@ h2{font-size: 2em;}
 .banner .img04{left: -28px;bottom: -150px;} 
 
 .txtWrap {display: flex;justify-content: center;align-items: center;}
-
+.txttWrap {text-align: center;}
+.sec01 .img05{transform: scale(0.8);}
 
 }
 
